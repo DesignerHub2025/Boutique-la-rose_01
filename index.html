@@ -2,7 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Boutique La Rose | Chéraga</title>
 
@@ -11,11 +15,16 @@
     content="Boutique La Rose — Mode féminine et élégance à Chéraga, Alger."
   >
 
-  <meta name="theme-color" content="#070504">
+  <meta name="theme-color" content="#080604">
 
-  <link rel="icon" href="images/logo.jpeg">
+  <link
+    rel="icon"
+    type="image/png"
+    href="images/logo.PNG"
+  >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
@@ -27,13 +36,13 @@
     :root {
       --black: #050403;
       --panel: #100c09;
-      --panel-light: #18110c;
+      --panel-light: #19110c;
       --gold: #d9a94b;
-      --gold-light: #f3d58e;
-      --cream: #fff7e6;
-      --muted: #a99a84;
-      --line: rgba(225, 181, 89, 0.23);
-      --rose: #b86767;
+      --gold-light: #f4d68d;
+      --cream: #fff8e8;
+      --muted: #aa9b86;
+      --rose: #b96767;
+      --line: rgba(226, 182, 90, 0.23);
     }
 
     * {
@@ -43,8 +52,8 @@
     }
 
     html {
-      scroll-behavior: smooth;
       background: var(--black);
+      scroll-behavior: smooth;
     }
 
     body {
@@ -55,16 +64,16 @@
         radial-gradient(
           circle at 50% -5%,
           rgba(217, 169, 75, 0.18),
-          transparent 450px
+          transparent 430px
         ),
         radial-gradient(
           circle at 5% 45%,
-          rgba(151, 65, 65, 0.12),
-          transparent 400px
+          rgba(145, 60, 60, 0.13),
+          transparent 390px
         ),
         linear-gradient(
           155deg,
-          #080604 0%,
+          #090604 0%,
           #020202 55%,
           #100905 100%
         );
@@ -77,7 +86,7 @@
       inset: 0;
       z-index: -1;
       pointer-events: none;
-      opacity: 0.25;
+      opacity: 0.28;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.07'/%3E%3C/svg%3E");
     }
 
@@ -91,7 +100,16 @@
       font: inherit;
     }
 
-    .decorative-circle {
+    svg {
+      width: 23px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .background-circle {
       position: fixed;
       z-index: -1;
       width: 420px;
@@ -101,7 +119,7 @@
       pointer-events: none;
     }
 
-    .decorative-circle::after {
+    .background-circle::after {
       content: "";
       position: absolute;
       inset: 42px;
@@ -119,19 +137,19 @@
       left: -220px;
     }
 
-    .page-container {
+    .page {
       position: relative;
       width: min(100%, 620px);
       margin: auto;
-      padding: 42px 17px 50px;
+      padding: 40px 16px 50px;
     }
 
-    /* زر مشاركة الصفحة */
+    /* زر المشاركة */
 
     .share-button {
       position: absolute;
       top: 22px;
-      right: 20px;
+      right: 19px;
       z-index: 10;
       width: 44px;
       height: 44px;
@@ -139,19 +157,19 @@
       place-items: center;
       border: 1px solid var(--line);
       border-radius: 50%;
-      background: rgba(18, 13, 10, 0.75);
+      background: rgba(17, 12, 9, 0.78);
       backdrop-filter: blur(12px);
       cursor: pointer;
-      transition: 0.25s;
+      transition: 0.25s ease;
     }
 
     .share-button:hover {
       transform: translateY(-2px);
       border-color: var(--gold);
-      background: rgba(217, 169, 75, 0.12);
+      background: rgba(217, 169, 75, 0.13);
     }
 
-    /* رأس الصفحة */
+    /* الشعار والعنوان */
 
     .brand-header {
       padding: 10px 30px 35px;
@@ -172,14 +190,14 @@
       content: "";
       position: absolute;
       inset: -6px;
-      border: 1px solid rgba(243, 213, 142, 0.35);
+      border: 1px solid rgba(244, 214, 141, 0.34);
       border-radius: 50%;
       background: conic-gradient(
         from 180deg,
         transparent,
-        rgba(217, 169, 75, 0.42),
+        rgba(217, 169, 75, 0.44),
         transparent 38%,
-        rgba(184, 103, 103, 0.25),
+        rgba(185, 103, 103, 0.27),
         transparent 76%
       );
       animation: rotateCircle 12s linear infinite;
@@ -200,11 +218,11 @@
       width: 124px;
       height: 124px;
       padding: 4px;
-      border: 1px solid rgba(243, 213, 142, 0.8);
+      border: 1px solid rgba(244, 214, 141, 0.80);
       border-radius: 50%;
       background: linear-gradient(
         145deg,
-        #f3d58e,
+        #f4d68d,
         #79511a,
         #d9a94b
       );
@@ -267,7 +285,7 @@
       gap: 8px;
       border: 1px solid var(--line);
       border-radius: 50px;
-      color: #c4b79e;
+      color: #c5b79e;
       background: rgba(217, 169, 75, 0.06);
       font-size: 11px;
       letter-spacing: 0.06em;
@@ -275,8 +293,13 @@
     }
 
     .location-label:hover {
-      border-color: var(--gold);
       color: var(--cream);
+      border-color: var(--gold);
+    }
+
+    .location-label svg {
+      width: 15px;
+      color: var(--gold);
     }
 
     /* الأقسام */
@@ -289,7 +312,7 @@
       border-radius: 30px;
       background: linear-gradient(
         145deg,
-        rgba(26, 18, 13, 0.91),
+        rgba(26, 18, 13, 0.92),
         rgba(7, 6, 5, 0.96)
       );
       box-shadow:
@@ -360,7 +383,7 @@
     .product-gallery {
       display: grid;
       grid-auto-flow: column;
-      grid-auto-columns: 76%;
+      grid-auto-columns: 77%;
       gap: 12px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
@@ -377,7 +400,7 @@
       min-height: 350px;
       overflow: hidden;
       scroll-snap-align: center;
-      border: 1px solid rgba(243, 213, 142, 0.18);
+      border: 1px solid rgba(244, 214, 141, 0.19);
       border-radius: 23px;
       background: #17100c;
     }
@@ -397,67 +420,11 @@
       transform: scale(1.05);
     }
 
-    .placeholder {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-content: center;
-      gap: 10px;
-      text-align: center;
-    }
-
-    .placeholder::before {
-      content: "";
-      position: absolute;
-      inset: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 17px;
-    }
-
-    .placeholder-number {
-      color: rgba(243, 213, 142, 0.20);
-      font-family: "Cormorant Garamond", serif;
-      font-size: 100px;
-      line-height: 0.8;
-    }
-
-    .placeholder-text {
-      color: rgba(255, 247, 230, 0.50);
-      font-size: 10px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-
-    .product-one {
-      background:
-        radial-gradient(circle at 20% 20%, #693b34, #160d0c 72%);
-    }
-
-    .product-two {
-      background:
-        radial-gradient(circle at 80% 15%, #72543a, #17100b 72%);
-    }
-
-    .product-three {
-      background:
-        radial-gradient(circle at 35% 30%, #3b5044, #0e1411 74%);
-    }
-
-    .product-four {
-      background:
-        radial-gradient(circle at 75% 20%, #53374a, #130d12 72%);
-    }
-
-    .product-five {
-      background:
-        radial-gradient(circle at 30% 15%, #625b4c, #15130f 72%);
-    }
-
     .product-information {
       position: absolute;
       inset: auto 0 0;
       z-index: 3;
-      padding: 70px 17px 18px;
+      padding: 75px 17px 18px;
       display: grid;
       gap: 4px;
       background: linear-gradient(
@@ -504,12 +471,13 @@
       );
     }
 
-    /* أزرار الاتصال والموقع */
+    /* الاتصال والموقع */
 
     .main-actions {
       margin: 16px 0;
       display: grid;
       gap: 11px;
+      animation: reveal 0.7s 0.18s ease both;
     }
 
     .action-button {
@@ -530,7 +498,7 @@
     }
 
     .action-button.primary {
-      border-color: rgba(243, 213, 142, 0.45);
+      border-color: rgba(244, 214, 141, 0.45);
       background: linear-gradient(
         125deg,
         rgba(118, 76, 21, 0.38),
@@ -553,7 +521,6 @@
       border-radius: 15px;
       color: var(--gold-light);
       background: rgba(217, 169, 75, 0.08);
-      font-size: 21px;
     }
 
     .action-content {
@@ -575,10 +542,11 @@
       font-size: 18px;
     }
 
-    /* وسائل التواصل */
+    /* شبكات التواصل */
 
     .social-section {
       margin-top: 16px;
+      animation: reveal 0.7s 0.26s ease both;
     }
 
     .social-grid {
@@ -601,7 +569,7 @@
 
     .social-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(243, 213, 142, 0.40);
+      border-color: rgba(244, 214, 141, 0.40);
       background: rgba(255, 255, 255, 0.05);
     }
 
@@ -613,10 +581,11 @@
       border-radius: 13px;
       background: rgba(255, 255, 255, 0.055);
       font-size: 21px;
+      font-weight: 700;
     }
 
     .instagram .social-icon {
-      color: #ff7997;
+      color: #ff7897;
     }
 
     .tiktok .social-icon {
@@ -655,12 +624,13 @@
       color: var(--gold);
     }
 
-    /* Footer */
+    /* نهاية الصفحة */
 
     footer {
       padding: 36px 0 5px;
       text-align: center;
       color: #887b69;
+      animation: reveal 0.7s 0.32s ease both;
     }
 
     .footer-symbol {
@@ -679,8 +649,6 @@
       font-size: 7px;
       letter-spacing: 0.34em;
     }
-
-    /* رسالة نسخ الرابط */
 
     .toast {
       position: fixed;
@@ -705,20 +673,8 @@
       transform: translate(-50%, 0);
     }
 
-    .animated-section {
-      animation: reveal 0.7s ease both;
-    }
-
     .products-section {
-      animation-delay: 0.10s;
-    }
-
-    .main-actions {
-      animation-delay: 0.18s;
-    }
-
-    .social-section {
-      animation-delay: 0.26s;
+      animation: reveal 0.7s 0.10s ease both;
     }
 
     @keyframes reveal {
@@ -740,7 +696,7 @@
     }
 
     @media (min-width: 720px) {
-      .page-container {
+      .page {
         padding-top: 60px;
       }
 
@@ -754,7 +710,7 @@
     }
 
     @media (max-width: 390px) {
-      .page-container {
+      .page {
         padding-inline: 11px;
       }
 
@@ -798,28 +754,30 @@
 </head>
 
 <body>
-  <div class="decorative-circle circle-one"></div>
-  <div class="decorative-circle circle-two"></div>
+  <div class="background-circle circle-one"></div>
+  <div class="background-circle circle-two"></div>
 
-  <main class="page-container">
-
-    <!-- زر مشاركة الموقع -->
+  <main class="page">
 
     <button
       class="share-button"
       id="shareButton"
       aria-label="Partager le site"
     >
-      ⤴
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="18" cy="5" r="2.5"></circle>
+        <circle cx="6" cy="12" r="2.5"></circle>
+        <circle cx="18" cy="19" r="2.5"></circle>
+        <path d="m8.2 10.8 7.6-4.5"></path>
+        <path d="m8.2 13.2 7.6 4.5"></path>
+      </svg>
     </button>
-
-    <!-- هوية المحل -->
 
     <header class="brand-header">
       <div class="logo-halo">
         <div class="logo-frame">
           <img
-            src="images/logo.jpeg"
+            src="images/logo.PNG"
             alt="Logo Boutique La Rose"
           >
         </div>
@@ -841,15 +799,17 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <span>◆</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+          <circle cx="12" cy="10" r="2.5"></circle>
+        </svg>
+
         Chéraga · Alger
       </a>
     </header>
 
-    <!-- معرض المنتجات -->
-
     <section
-      class="luxury-section animated-section products-section"
+      class="luxury-section products-section"
       aria-labelledby="productsTitle"
     >
       <div class="section-heading">
@@ -871,18 +831,10 @@
 
       <div class="product-gallery" id="productGallery">
 
-        <!-- المنتج الأول -->
-
-        <article class="product-card product-one">
-          <div class="placeholder">
-            <div class="placeholder-number">01</div>
-            <div class="placeholder-text">Votre photo</div>
-          </div>
-
+        <article class="product-card">
           <img
             src="images/product1.jpg"
             alt="Produit Boutique La Rose 1"
-            onerror="this.style.display='none'"
           >
 
           <div class="product-information">
@@ -891,18 +843,10 @@
           </div>
         </article>
 
-        <!-- المنتج الثاني -->
-
-        <article class="product-card product-two">
-          <div class="placeholder">
-            <div class="placeholder-number">02</div>
-            <div class="placeholder-text">Votre photo</div>
-          </div>
-
+        <article class="product-card">
           <img
             src="images/product2.jpg"
             alt="Produit Boutique La Rose 2"
-            onerror="this.style.display='none'"
           >
 
           <div class="product-information">
@@ -911,18 +855,10 @@
           </div>
         </article>
 
-        <!-- المنتج الثالث -->
-
-        <article class="product-card product-three">
-          <div class="placeholder">
-            <div class="placeholder-number">03</div>
-            <div class="placeholder-text">Votre photo</div>
-          </div>
-
+        <article class="product-card">
           <img
             src="images/product3.jpg"
             alt="Produit Boutique La Rose 3"
-            onerror="this.style.display='none'"
           >
 
           <div class="product-information">
@@ -931,42 +867,14 @@
           </div>
         </article>
 
-        <!-- المنتج الرابع -->
-
-        <article class="product-card product-four">
-          <div class="placeholder">
-            <div class="placeholder-number">04</div>
-            <div class="placeholder-text">Votre photo</div>
-          </div>
-
+        <article class="product-card">
           <img
             src="images/product4.jpg"
             alt="Produit Boutique La Rose 4"
-            onerror="this.style.display='none'"
           >
 
           <div class="product-information">
             <small>Tendance</small>
-            <strong>Détails précieux</strong>
-          </div>
-        </article>
-
-        <!-- المنتج الخامس -->
-
-        <article class="product-card product-five">
-          <div class="placeholder">
-            <div class="placeholder-number">05</div>
-            <div class="placeholder-text">Votre photo</div>
-          </div>
-
-          <img
-            src="images/product5.jpg"
-            alt="Produit Boutique La Rose 5"
-            onerror="this.style.display='none'"
-          >
-
-          <div class="product-information">
-            <small>Sélection</small>
             <strong>Féminité moderne</strong>
           </div>
         </article>
@@ -976,17 +884,19 @@
       <div class="gallery-dots" id="galleryDots"></div>
     </section>
 
-    <!-- الاتصال والموقع -->
-
     <section
-      class="main-actions animated-section"
-      aria-label="Contact"
+      class="main-actions"
+      aria-label="Contact et localisation"
     >
       <a
         class="action-button primary"
         href="tel:+213782596816"
       >
-        <span class="action-icon">☎</span>
+        <span class="action-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.2 3.6 10 8 8.1 9.9a14.7 14.7 0 0 0 6 6L16 14l4.4 2.8-.9 3.1c-.2.7-.9 1.1-1.6 1.1C9.7 20.5 3.5 14.3 3 6.1c0-.7.4-1.4 1.1-1.6l3.1-.9Z"></path>
+          </svg>
+        </span>
 
         <span class="action-content">
           <small>Contact direct</small>
@@ -1002,7 +912,12 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <span class="action-icon">⌖</span>
+        <span class="action-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+            <circle cx="12" cy="10" r="2.5"></circle>
+          </svg>
+        </span>
 
         <span class="action-content">
           <small>Chéraga, Alger</small>
@@ -1013,10 +928,8 @@
       </a>
     </section>
 
-    <!-- وسائل التواصل -->
-
     <section
-      class="luxury-section social-section animated-section"
+      class="luxury-section social-section"
       aria-labelledby="socialTitle"
     >
       <div class="section-heading">
@@ -1106,21 +1019,30 @@
   </div>
 
   <script>
-    const gallery = document.getElementById("productGallery");
-    const products = Array.from(
-      document.querySelectorAll(".product-card")
-    );
+    const gallery =
+      document.getElementById("productGallery");
 
-    const dotsContainer = document.getElementById("galleryDots");
-    const previousButton = document.getElementById("previousButton");
-    const nextButton = document.getElementById("nextButton");
-    const shareButton = document.getElementById("shareButton");
-    const toast = document.getElementById("toast");
+    const products =
+      Array.from(document.querySelectorAll(".product-card"));
+
+    const dotsContainer =
+      document.getElementById("galleryDots");
+
+    const previousButton =
+      document.getElementById("previousButton");
+
+    const nextButton =
+      document.getElementById("nextButton");
+
+    const shareButton =
+      document.getElementById("shareButton");
+
+    const toast =
+      document.getElementById("toast");
 
     let currentProduct = 0;
     let autoplay;
-
-    /* إنشاء النقاط */
+    let scrollTimer;
 
     products.forEach((product, index) => {
       const dot = document.createElement("i");
@@ -1132,9 +1054,8 @@
       dotsContainer.appendChild(dot);
     });
 
-    const dots = Array.from(dotsContainer.children);
-
-    /* الانتقال إلى منتج */
+    const dots =
+      Array.from(dotsContainer.children);
 
     function showProduct(index, smooth = true) {
       currentProduct =
@@ -1154,8 +1075,6 @@
       });
     }
 
-    /* التحريك التلقائي */
-
     function startAutoplay() {
       clearInterval(autoplay);
 
@@ -1174,10 +1093,6 @@
       startAutoplay();
     });
 
-    /* تحديث النقاط عند السحب باليد */
-
-    let scrollTimer;
-
     gallery.addEventListener("scroll", () => {
       clearTimeout(scrollTimer);
 
@@ -1192,9 +1107,8 @@
           const productCenter =
             product.offsetLeft + product.offsetWidth / 2;
 
-          const distance = Math.abs(
-            galleryCenter - productCenter
-          );
+          const distance =
+            Math.abs(galleryCenter - productCenter);
 
           if (distance < nearestDistance) {
             nearestDistance = distance;
@@ -1212,8 +1126,6 @@
         });
       }, 80);
     });
-
-    /* مشاركة الموقع */
 
     shareButton.addEventListener("click", async () => {
       const shareInformation = {
