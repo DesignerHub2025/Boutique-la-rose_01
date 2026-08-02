@@ -2,234 +2,178 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080705">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>Boutique La Rose | Chéraga</title>
+  <title>Boutique La Rose | Mode féminine</title>
 
   <meta
     name="description"
-    content="Boutique La Rose — Mode féminine et élégance à Chéraga, Alger."
-  >
-
-  <meta name="theme-color" content="#080604">
-
-  <link
-    rel="icon"
-    type="image/png"
-    href="images/logo.PNG"
-  >
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
+    content="Boutique La Rose — Mode féminine, élégance et raffinement."
   >
 
   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap");
+
     :root {
-      --black: #050403;
-      --panel: #100c09;
-      --panel-light: #19110c;
-      --gold: #d9a94b;
-      --gold-light: #f4d68d;
-      --cream: #fff8e8;
-      --muted: #aa9b86;
-      --rose: #b96767;
-      --line: rgba(226, 182, 90, 0.23);
+      --black: #080705;
+      --black-light: #12100d;
+      --card: rgba(255, 255, 255, 0.055);
+      --gold: #d5a83c;
+      --gold-light: #ffe29a;
+      --gold-dark: #8f6719;
+      --white: #fffaf0;
+      --muted: #c6bda9;
+      --border: rgba(226, 183, 76, 0.28);
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
     }
 
     html {
-      background: var(--black);
       scroll-behavior: smooth;
     }
 
     body {
       min-height: 100vh;
       overflow-x: hidden;
-      color: var(--cream);
+      color: var(--white);
+      font-family: "Montserrat", sans-serif;
       background:
-        radial-gradient(
-          circle at 50% -5%,
-          rgba(217, 169, 75, 0.18),
-          transparent 430px
-        ),
-        radial-gradient(
-          circle at 5% 45%,
-          rgba(145, 60, 60, 0.13),
-          transparent 390px
-        ),
-        linear-gradient(
-          155deg,
-          #090604 0%,
-          #020202 55%,
-          #100905 100%
-        );
-      font-family: "Manrope", sans-serif;
+        radial-gradient(circle at 50% -10%, rgba(213, 168, 60, 0.18), transparent 32%),
+        radial-gradient(circle at 0% 40%, rgba(213, 168, 60, 0.08), transparent 28%),
+        linear-gradient(180deg, #050403 0%, #0e0b08 48%, #050403 100%);
     }
 
     body::before {
       content: "";
       position: fixed;
       inset: 0;
-      z-index: -1;
+      z-index: -2;
+      opacity: 0.14;
       pointer-events: none;
-      opacity: 0.28;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.07'/%3E%3C/svg%3E");
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 34px 34px;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      color: inherit;
-      font: inherit;
-    }
-
-    svg {
-      width: 23px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.8;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .background-circle {
+    .glow {
       position: fixed;
       z-index: -1;
-      width: 420px;
-      height: 420px;
-      border: 1px solid rgba(217, 169, 75, 0.10);
+      width: 250px;
+      height: 250px;
       border-radius: 50%;
+      filter: blur(90px);
       pointer-events: none;
+      background: rgba(213, 168, 60, 0.12);
     }
 
-    .background-circle::after {
-      content: "";
-      position: absolute;
-      inset: 42px;
-      border: 1px solid rgba(217, 169, 75, 0.07);
-      border-radius: 50%;
+    .glow-one {
+      top: 5%;
+      left: -120px;
     }
 
-    .circle-one {
-      top: -250px;
-      right: -220px;
-    }
-
-    .circle-two {
-      bottom: -260px;
-      left: -220px;
+    .glow-two {
+      right: -130px;
+      bottom: 15%;
     }
 
     .page {
+      width: min(100%, 540px);
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 22px 16px 42px;
       position: relative;
-      width: min(100%, 620px);
-      margin: auto;
-      padding: 40px 16px 50px;
     }
 
-    /* زر المشاركة */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .mini-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .mini-brand::before {
+      content: "";
+      width: 25px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold));
+    }
 
     .share-button {
-      position: absolute;
-      top: 22px;
-      right: 19px;
-      z-index: 10;
       width: 44px;
       height: 44px;
       display: grid;
       place-items: center;
-      border: 1px solid var(--line);
       border-radius: 50%;
-      background: rgba(17, 12, 9, 0.78);
-      backdrop-filter: blur(12px);
       cursor: pointer;
+      color: var(--gold-light);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.045);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
       transition: 0.25s ease;
     }
 
-    .share-button:hover {
-      transform: translateY(-2px);
-      border-color: var(--gold);
-      background: rgba(217, 169, 75, 0.13);
+    .share-button:active {
+      transform: scale(0.92);
     }
 
-    /* الشعار والعنوان */
+    .share-button svg {
+      width: 20px;
+      height: 20px;
+    }
 
-    .brand-header {
-      padding: 10px 30px 35px;
+    .hero {
       text-align: center;
-      animation: reveal 0.7s ease both;
-    }
-
-    .logo-halo {
-      position: relative;
-      width: 144px;
-      height: 144px;
-      margin: 0 auto 25px;
-      display: grid;
-      place-items: center;
-    }
-
-    .logo-halo::before {
-      content: "";
-      position: absolute;
-      inset: -6px;
-      border: 1px solid rgba(244, 214, 141, 0.34);
-      border-radius: 50%;
-      background: conic-gradient(
-        from 180deg,
-        transparent,
-        rgba(217, 169, 75, 0.44),
-        transparent 38%,
-        rgba(185, 103, 103, 0.27),
-        transparent 76%
-      );
-      animation: rotateCircle 12s linear infinite;
-    }
-
-    .logo-halo::after {
-      content: "";
-      position: absolute;
-      inset: -18px;
-      border: 1px solid rgba(217, 169, 75, 0.10);
-      border-radius: 50%;
-      box-shadow: 0 0 55px rgba(217, 169, 75, 0.20);
+      padding: 12px 12px 22px;
     }
 
     .logo-frame {
+      width: 154px;
+      height: 154px;
+      padding: 5px;
+      margin: 0 auto 22px;
       position: relative;
-      z-index: 2;
-      width: 124px;
-      height: 124px;
-      padding: 4px;
-      border: 1px solid rgba(244, 214, 141, 0.80);
       border-radius: 50%;
       background: linear-gradient(
-        145deg,
-        #f4d68d,
-        #79511a,
-        #d9a94b
+        135deg,
+        var(--gold-light),
+        var(--gold-dark),
+        var(--gold-light)
       );
-      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.65);
+      box-shadow:
+        0 0 0 8px rgba(213,168,60,0.06),
+        0 0 45px rgba(213,168,60,0.23);
+      animation: floating 4s ease-in-out infinite;
     }
 
-    .logo-frame img {
+    .logo-frame::before {
+      content: "";
+      position: absolute;
+      inset: -13px;
+      border-radius: 50%;
+      border: 1px solid rgba(213,168,60,0.24);
+      animation: pulse 2.6s ease-in-out infinite;
+    }
+
+    .main-logo {
       width: 100%;
       height: 100%;
       display: block;
@@ -238,434 +182,388 @@
       background: #000;
     }
 
-    .small-title {
-      margin-bottom: 9px;
-      color: var(--gold-light);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.30em;
+    .eyebrow {
+      color: var(--gold);
+      margin-bottom: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
       text-transform: uppercase;
     }
 
-    h1,
-    h2 {
-      font-family: "Cormorant Garamond", serif;
-    }
-
     h1 {
-      color: transparent;
-      background: linear-gradient(
-        180deg,
-        #fff8e2 10%,
-        #d39c39 88%
-      );
-      background-clip: text;
-      -webkit-background-clip: text;
-      font-size: clamp(48px, 15vw, 72px);
-      font-weight: 600;
-      line-height: 0.9;
-      letter-spacing: 0.08em;
-      text-indent: 0.08em;
-    }
-
-    .slogan {
-      margin: 15px 0 18px;
-      color: #b9a98e;
       font-family: "Cormorant Garamond", serif;
-      font-size: 19px;
-      font-style: italic;
+      font-size: clamp(45px, 12vw, 66px);
+      font-weight: 600;
+      line-height: 0.95;
+      letter-spacing: 2px;
+      background: linear-gradient(
+        100deg,
+        #ad7c20,
+        #ffe9ae,
+        #c8952d,
+        #fff0bd
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
-    .location-label {
-      width: fit-content;
-      margin: auto;
-      padding: 9px 14px;
+    .subtitle {
+      max-width: 390px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .chips {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .chip {
+      padding: 7px 12px;
+      color: var(--gold-light);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.7px;
+      border-radius: 50px;
+      border: 1px solid rgba(213,168,60,0.25);
+      background: rgba(213,168,60,0.06);
+    }
+
+    .section {
+      margin-top: 24px;
+    }
+
+    .section-title {
       display: flex;
       align-items: center;
-      gap: 8px;
-      border: 1px solid var(--line);
-      border-radius: 50px;
-      color: #c5b79e;
-      background: rgba(217, 169, 75, 0.06);
-      font-size: 11px;
-      letter-spacing: 0.06em;
-      transition: 0.25s;
-    }
-
-    .location-label:hover {
-      color: var(--cream);
-      border-color: var(--gold);
-    }
-
-    .location-label svg {
-      width: 15px;
-      color: var(--gold);
-    }
-
-    /* الأقسام */
-
-    .luxury-section {
-      position: relative;
-      padding: 20px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 30px;
-      background: linear-gradient(
-        145deg,
-        rgba(26, 18, 13, 0.92),
-        rgba(7, 6, 5, 0.96)
-      );
-      box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.45),
-        inset 0 1px rgba(255, 255, 255, 0.04);
-    }
-
-    .luxury-section::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 18%;
-      right: 18%;
-      height: 1px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        var(--gold-light),
-        transparent
-      );
-      box-shadow: 0 0 15px var(--gold);
-    }
-
-    .section-heading {
-      margin-bottom: 17px;
-      display: flex;
-      align-items: end;
       justify-content: space-between;
-      gap: 15px;
+      margin: 0 5px 13px;
     }
 
-    .section-heading span {
-      color: var(--gold);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.23em;
+    .section-title h2 {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--gold-light);
+      font-size: 28px;
+      font-weight: 600;
     }
 
-    .section-heading h2 {
-      margin-top: 3px;
-      font-size: 31px;
-      font-weight: 500;
-      line-height: 1;
+    .section-title span {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
     }
 
-    /* معرض المنتجات */
+    .gallery {
+      position: relative;
+      overflow: hidden;
+      padding: 10px;
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.035);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+    }
 
-    .gallery-controls {
+    .slider {
       display: flex;
-      gap: 7px;
-    }
-
-    .gallery-controls button {
-      width: 36px;
-      height: 36px;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.025);
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .gallery-controls button:hover {
-      border-color: var(--gold);
-      background: rgba(217, 169, 75, 0.13);
-    }
-
-    .product-gallery {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: 77%;
-      gap: 12px;
+      gap: 10px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      overscroll-behavior-inline: contain;
       scrollbar-width: none;
+      border-radius: 20px;
     }
 
-    .product-gallery::-webkit-scrollbar {
+    .slider::-webkit-scrollbar {
       display: none;
     }
 
-    .product-card {
+    .product {
+      min-width: 78%;
+      height: 380px;
       position: relative;
-      min-height: 350px;
       overflow: hidden;
       scroll-snap-align: center;
-      border: 1px solid rgba(244, 214, 141, 0.19);
-      border-radius: 23px;
-      background: #17100c;
+      border-radius: 20px;
+      background: #16120d;
     }
 
-    .product-card img {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
+    .product img {
       width: 100%;
       height: 100%;
       display: block;
       object-fit: cover;
-      transition: transform 0.7s ease;
+      transition: transform 0.5s ease;
     }
 
-    .product-card:hover img {
-      transform: scale(1.05);
+    .product:active img {
+      transform: scale(1.03);
     }
 
-    .product-information {
+    .product::after {
+      content: "";
       position: absolute;
-      inset: auto 0 0;
-      z-index: 3;
-      padding: 75px 17px 18px;
-      display: grid;
-      gap: 4px;
+      inset: 0;
       background: linear-gradient(
-        transparent,
-        rgba(0, 0, 0, 0.92)
+        180deg,
+        transparent 55%,
+        rgba(0,0,0,0.72) 100%
       );
     }
 
-    .product-information small {
-      color: var(--gold-light);
-      font-size: 9px;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
+    .product-number {
+      position: absolute;
+      left: 15px;
+      bottom: 14px;
+      z-index: 2;
+      color: white;
+      font-size: 12px;
+      letter-spacing: 2px;
     }
 
-    .product-information strong {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 23px;
-      font-weight: 600;
-    }
-
-    .gallery-dots {
-      min-height: 7px;
-      margin-top: 17px;
+    .slider-hint {
       display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 7px;
+      gap: 9px;
+      padding: 13px 4px 4px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1px;
     }
 
-    .gallery-dots i {
-      width: 6px;
-      height: 6px;
-      border-radius: 30px;
-      background: #5f574e;
-      transition: 0.25s;
+    .slider-hint span {
+      width: 26px;
+      height: 1px;
+      background: var(--gold);
     }
 
-    .gallery-dots i.active {
-      width: 23px;
-      background: linear-gradient(
-        90deg,
-        var(--gold),
-        var(--rose)
-      );
-    }
-
-    /* الاتصال والموقع */
-
-    .main-actions {
-      margin: 16px 0;
+    .primary-actions {
       display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 11px;
-      animation: reveal 0.7s 0.18s ease both;
+      margin-top: 24px;
     }
 
     .action-button {
-      min-height: 78px;
-      padding: 13px 16px;
-      display: grid;
-      grid-template-columns: 48px 1fr 25px;
+      min-height: 104px;
+      padding: 16px 10px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 13px;
-      border: 1px solid var(--line);
+      justify-content: center;
+      gap: 11px;
+      color: var(--white);
+      text-align: center;
+      text-decoration: none;
       border-radius: 22px;
-      background: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0.045),
-        rgba(217, 169, 75, 0.025)
-      );
-      transition: 0.25s;
+      border: 1px solid rgba(255,255,255,0.08);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+      transition: 0.25s ease;
     }
 
-    .action-button.primary {
-      border-color: rgba(244, 214, 141, 0.45);
-      background: linear-gradient(
-        125deg,
-        rgba(118, 76, 21, 0.38),
-        rgba(20, 13, 8, 0.90)
-      );
-    }
-
-    .action-button:hover {
-      transform: translateY(-3px);
+    .action-button:active {
+      transform: scale(0.97);
       border-color: var(--gold);
-      box-shadow: 0 15px 38px rgba(0, 0, 0, 0.35);
     }
 
     .action-icon {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(217, 169, 75, 0.28);
-      border-radius: 15px;
-      color: var(--gold-light);
-      background: rgba(217, 169, 75, 0.08);
-    }
-
-    .action-content {
-      display: grid;
-      gap: 3px;
-    }
-
-    .action-content small {
-      color: var(--muted);
-      font-size: 10px;
-    }
-
-    .action-content strong {
-      font-size: 14px;
-    }
-
-    .action-arrow {
-      color: var(--gold);
-      font-size: 18px;
-    }
-
-    /* شبكات التواصل */
-
-    .social-section {
-      margin-top: 16px;
-      animation: reveal 0.7s 0.26s ease both;
-    }
-
-    .social-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
-
-    .social-card {
-      position: relative;
-      min-height: 125px;
-      padding: 15px;
-      display: grid;
-      align-content: space-between;
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.025);
-      transition: 0.25s;
-    }
-
-    .social-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(244, 214, 141, 0.40);
-      background: rgba(255, 255, 255, 0.05);
-    }
-
-    .social-icon {
       width: 42px;
       height: 42px;
       display: grid;
       place-items: center;
       border-radius: 13px;
-      background: rgba(255, 255, 255, 0.055);
-      font-size: 21px;
-      font-weight: 700;
-    }
-
-    .instagram .social-icon {
-      color: #ff7897;
-    }
-
-    .tiktok .social-icon {
-      color: #7cebe7;
-    }
-
-    .facebook .social-icon {
-      color: #76aaff;
-    }
-
-    .telephone .social-icon {
       color: var(--gold-light);
+      background: rgba(213,168,60,0.1);
+      border: 1px solid rgba(213,168,60,0.2);
     }
 
-    .social-information {
-      display: grid;
-      gap: 3px;
+    .action-icon svg {
+      width: 22px;
+      height: 22px;
     }
 
-    .social-information strong {
+    .action-button strong {
       font-size: 13px;
     }
 
-    .social-information small {
-      overflow: hidden;
+    .action-button small {
       color: var(--muted);
       font-size: 9px;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .social-card {
+      min-width: 0;
+      min-height: 145px;
+      padding: 14px 7px 13px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      overflow: hidden;
+      color: white;
+      text-decoration: none;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.075), rgba(255,255,255,0.02));
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.045),
+        0 15px 35px rgba(0,0,0,0.2);
+      transition: 0.25s ease;
+    }
+
+    .social-card:active {
+      transform: scale(0.95);
+    }
+
+    .social-logo-wrap {
+      width: 67px;
+      height: 67px;
+      padding: 6px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 18px;
+      background: white;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.28);
+    }
+
+    .social-logo {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+      border-radius: 13px;
+    }
+
+    .social-card strong {
+      width: 100%;
+      overflow: hidden;
+      font-size: 11px;
+      text-align: center;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
 
-    .social-arrow {
-      position: absolute;
-      top: 16px;
-      right: 15px;
-      color: var(--gold);
+    .social-card small {
+      color: var(--muted);
+      font-size: 8px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
     }
 
-    /* نهاية الصفحة */
-
-    footer {
-      padding: 36px 0 5px;
-      text-align: center;
-      color: #887b69;
-      animation: reveal 0.7s 0.32s ease both;
+    .instagram {
+      border-color: rgba(225,48,108,0.22);
     }
 
-    .footer-symbol {
-      margin-bottom: 8px;
-      color: var(--gold);
+    .facebook {
+      border-color: rgba(24,119,242,0.25);
     }
 
-    footer p {
-      margin-bottom: 6px;
+    .tiktok {
+      border-color: rgba(37,244,238,0.2);
+    }
+
+    .location-card {
+      padding: 18px;
+      overflow: hidden;
+      border-radius: 25px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(213,168,60,0.13), transparent 35%),
+        rgba(255,255,255,0.035);
+    }
+
+    .location-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .location-icon {
+      min-width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      color: var(--gold-light);
+      border-radius: 15px;
+      background: rgba(213,168,60,0.1);
+      border: 1px solid rgba(213,168,60,0.22);
+    }
+
+    .location-icon svg {
+      width: 23px;
+      height: 23px;
+    }
+
+    .location-text h3 {
       color: var(--gold-light);
       font-family: "Cormorant Garamond", serif;
-      font-size: 19px;
+      font-size: 23px;
     }
 
-    footer span {
-      font-size: 7px;
-      letter-spacing: 0.34em;
+    .location-text p {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
+    .map-button {
+      width: 100%;
+      margin-top: 15px;
+      padding: 14px;
+      display: block;
+      color: #090705;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 14px;
+      background: linear-gradient(100deg, #ae7e20, #f5d47b, #b98420);
+    }
+
+    footer {
+      padding: 35px 10px 10px;
+      color: #746b5e;
+      text-align: center;
+      font-size: 9px;
+      line-height: 1.8;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
     }
 
     .toast {
       position: fixed;
       left: 50%;
-      bottom: 24px;
-      z-index: 50;
-      padding: 11px 18px;
-      border: 1px solid var(--line);
-      border-radius: 50px;
-      color: var(--gold-light);
-      background: rgba(14, 10, 8, 0.95);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
-      font-size: 11px;
+      bottom: 26px;
+      z-index: 20;
+      padding: 12px 18px;
       opacity: 0;
+      color: #110e08;
+      font-size: 11px;
+      font-weight: 700;
       pointer-events: none;
+      border-radius: 50px;
+      background: var(--gold-light);
       transform: translate(-50%, 20px);
-      transition: 0.25s;
+      transition: 0.3s ease;
     }
 
     .toast.show {
@@ -673,489 +571,340 @@
       transform: translate(-50%, 0);
     }
 
-    .products-section {
-      animation: reveal 0.7s 0.10s ease both;
-    }
-
-    @keyframes reveal {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-
-      to {
-        opacity: 1;
+    @keyframes floating {
+      0%, 100% {
         transform: translateY(0);
       }
-    }
-
-    @keyframes rotateCircle {
-      to {
-        transform: rotate(360deg);
+      50% {
+        transform: translateY(-7px);
       }
     }
 
-    @media (min-width: 720px) {
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.35;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.8;
+        transform: scale(1.04);
+      }
+    }
+
+    @media (max-width: 380px) {
       .page {
-        padding-top: 60px;
+        padding-left: 12px;
+        padding-right: 12px;
       }
 
-      .product-gallery {
-        grid-auto-columns: calc((100% - 24px) / 3);
-      }
-
-      .product-card {
-        min-height: 310px;
-      }
-    }
-
-    @media (max-width: 390px) {
-      .page {
-        padding-inline: 11px;
-      }
-
-      .brand-header {
-        padding-inline: 22px;
-      }
-
-      .luxury-section {
-        padding: 16px;
-        border-radius: 25px;
-      }
-
-      .product-gallery {
-        grid-auto-columns: 83%;
-      }
-
-      .product-card {
-        min-height: 325px;
+      .product {
+        min-width: 82%;
+        height: 330px;
       }
 
       .social-grid {
-        gap: 8px;
+        gap: 7px;
       }
 
       .social-card {
-        min-height: 118px;
-        padding: 13px;
+        min-height: 132px;
+        padding: 11px 5px;
       }
-    }
 
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
+      .social-logo-wrap {
+        width: 58px;
+        height: 58px;
+      }
+
+      .social-card strong {
+        font-size: 10px;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="background-circle circle-one"></div>
-  <div class="background-circle circle-two"></div>
+  <div class="glow glow-one"></div>
+  <div class="glow glow-two"></div>
 
   <main class="page">
+    <header class="topbar">
+      <div class="mini-brand">Boutique officielle</div>
 
-    <button
-      class="share-button"
-      id="shareButton"
-      aria-label="Partager le site"
-    >
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="18" cy="5" r="2.5"></circle>
-        <circle cx="6" cy="12" r="2.5"></circle>
-        <circle cx="18" cy="19" r="2.5"></circle>
-        <path d="m8.2 10.8 7.6-4.5"></path>
-        <path d="m8.2 13.2 7.6 4.5"></path>
-      </svg>
-    </button>
-
-    <header class="brand-header">
-      <div class="logo-halo">
-        <div class="logo-frame">
-          <img
-            src="images/logo.PNG"
-            alt="Logo Boutique La Rose"
-          >
-        </div>
-      </div>
-
-      <p class="small-title">
-        Boutique de mode féminine
-      </p>
-
-      <h1>LA ROSE</h1>
-
-      <p class="slogan">
-        L’élégance qui vous ressemble
-      </p>
-
-      <a
-        class="location-label"
-        href="https://maps.app.goo.gl/F58z1vffH6Cp3stj7?g_st=ic"
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        class="share-button"
+        type="button"
+        onclick="sharePage()"
+        aria-label="Partager la page"
       >
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
-          <circle cx="12" cy="10" r="2.5"></circle>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="18" cy="5" r="3"></circle>
+          <circle cx="6" cy="12" r="3"></circle>
+          <circle cx="18" cy="19" r="3"></circle>
+          <path d="m8.6 10.6 6.8-4.2"></path>
+          <path d="m8.6 13.4 6.8 4.2"></path>
         </svg>
-
-        Chéraga · Alger
-      </a>
+      </button>
     </header>
 
-    <section
-      class="luxury-section products-section"
-      aria-labelledby="productsTitle"
-    >
-      <div class="section-heading">
-        <div>
-          <span>NOUVELLE SÉLECTION</span>
-          <h2 id="productsTitle">Nos coups de cœur</h2>
-        </div>
-
-        <div class="gallery-controls">
-          <button id="previousButton" aria-label="Produit précédent">
-            ←
-          </button>
-
-          <button id="nextButton" aria-label="Produit suivant">
-            →
-          </button>
-        </div>
+    <section class="hero">
+      <div class="logo-frame">
+        <img
+          class="main-logo"
+          src="images/logo.PNG"
+          alt="Logo Boutique La Rose"
+        >
       </div>
 
-      <div class="product-gallery" id="productGallery">
+      <p class="eyebrow">Élégance • Féminité</p>
+      <h1>La Rose</h1>
 
-        <article class="product-card">
-          <img
-            src="images/product1.jpg"
-            alt="Produit Boutique La Rose 1"
-          >
+      <p class="subtitle">
+        Une sélection raffinée de vêtements féminins conçue pour
+        révéler votre élégance avec style, qualité et distinction.
+      </p>
 
-          <div class="product-information">
-            <small>Nouveauté</small>
-            <strong>Élégance naturelle</strong>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <img
-            src="images/product2.jpg"
-            alt="Produit Boutique La Rose 2"
-          >
-
-          <div class="product-information">
-            <small>Collection</small>
-            <strong>Allure raffinée</strong>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <img
-            src="images/product3.jpg"
-            alt="Produit Boutique La Rose 3"
-          >
-
-          <div class="product-information">
-            <small>La Rose</small>
-            <strong>Style intemporel</strong>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <img
-            src="images/product4.jpg"
-            alt="Produit Boutique La Rose 4"
-          >
-
-          <div class="product-information">
-            <small>Tendance</small>
-            <strong>Féminité moderne</strong>
-          </div>
-        </article>
-
+      <div class="chips">
+        <span class="chip">Mode féminine</span>
+        <span class="chip">Nouveautés</span>
+        <span class="chip">Élégance</span>
       </div>
-
-      <div class="gallery-dots" id="galleryDots"></div>
     </section>
 
-    <section
-      class="main-actions"
-      aria-label="Contact et localisation"
-    >
-      <a
-        class="action-button primary"
-        href="tel:+213782596816"
-      >
+    <section class="section">
+      <div class="section-title">
+        <h2>Notre sélection</h2>
+        <span>Glissez pour découvrir</span>
+      </div>
+
+      <div class="gallery">
+        <div class="slider" id="productSlider">
+          <article class="product">
+            <img src="images/product1.jpg" alt="Produit La Rose 1">
+            <span class="product-number">01 — LA ROSE</span>
+          </article>
+
+          <article class="product">
+            <img src="images/product2.jpg" alt="Produit La Rose 2">
+            <span class="product-number">02 — LA ROSE</span>
+          </article>
+
+          <article class="product">
+            <img src="images/product3.jpg" alt="Produit La Rose 3">
+            <span class="product-number">03 — LA ROSE</span>
+          </article>
+
+          <article class="product">
+            <img src="images/product4.jpg" alt="Produit La Rose 4">
+            <span class="product-number">04 — LA ROSE</span>
+          </article>
+        </div>
+
+        <div class="slider-hint">
+          <span></span>
+          Faites glisser les photos
+          <span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="primary-actions">
+      <a class="action-button" href="tel:+213782596816">
         <span class="action-icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7.2 3.6 10 8 8.1 9.9a14.7 14.7 0 0 0 6 6L16 14l4.4 2.8-.9 3.1c-.2.7-.9 1.1-1.6 1.1C9.7 20.5 3.5 14.3 3 6.1c0-.7.4-1.4 1.1-1.6l3.1-.9Z"></path>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2
+                     19.79 19.79 0 0 1-8.63-3.07
+                     19.5 19.5 0 0 1-6-6
+                     19.79 19.79 0 0 1-3.07-8.67
+                     A2 2 0 0 1 3.91 2h3
+                     a2 2 0 0 1 2 1.72
+                     c.12.9.33 1.78.62 2.63
+                     a2 2 0 0 1-.45 2.11L7.81 9.73
+                     a16 16 0 0 0 6 6l1.27-1.27
+                     a2 2 0 0 1 2.11-.45
+                     c.85.29 1.73.5 2.63.62
+                     A2 2 0 0 1 22 16.92z">
+            </path>
           </svg>
         </span>
 
-        <span class="action-content">
-          <small>Contact direct</small>
-          <strong>Appeler la boutique</strong>
-        </span>
-
-        <span class="action-arrow">↗</span>
+        <strong>Appeler</strong>
+        <small>0782 59 68 16</small>
       </a>
 
       <a
         class="action-button"
         href="https://maps.app.goo.gl/F58z1vffH6Cp3stj7?g_st=ic"
         target="_blank"
-        rel="noopener noreferrer"
+        rel="noopener"
       >
         <span class="action-icon">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
-            <circle cx="12" cy="10" r="2.5"></circle>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 12-9 12S3 17 3 10
+                     a9 9 0 1 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
           </svg>
         </span>
 
-        <span class="action-content">
-          <small>Chéraga, Alger</small>
-          <strong>Ouvrir l’itinéraire</strong>
-        </span>
-
-        <span class="action-arrow">↗</span>
+        <strong>Localisation</strong>
+        <small>Ouvrir Google Maps</small>
       </a>
     </section>
 
-    <section
-      class="luxury-section social-section"
-      aria-labelledby="socialTitle"
-    >
-      <div class="section-heading">
-        <div>
-          <span>RESTEZ CONNECTÉE</span>
-          <h2 id="socialTitle">Suivez La Rose</h2>
-        </div>
+    <section class="section">
+      <div class="section-title">
+        <h2>Suivez-nous</h2>
+        <span>Réseaux sociaux</span>
       </div>
 
       <div class="social-grid">
-
         <a
           class="social-card instagram"
           href="https://www.instagram.com/boutique_la_rose_1"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
         >
-          <span class="social-icon">◎</span>
-
-          <span class="social-information">
-            <strong>Instagram</strong>
-            <small>@boutique_la_rose_1</small>
+          <span class="social-logo-wrap">
+            <img
+              class="social-logo"
+              src="images/logo1.png"
+              alt="Logo Instagram"
+              onerror="this.onerror=null;this.src='https://cdn.simpleicons.org/instagram/E4405F';"
+            >
           </span>
 
-          <span class="social-arrow">↗</span>
-        </a>
-
-        <a
-          class="social-card tiktok"
-          href="https://www.tiktok.com/@boutiquelarose0"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="social-icon">♪</span>
-
-          <span class="social-information">
-            <strong>TikTok</strong>
-            <small>@boutiquelarose0</small>
-          </span>
-
-          <span class="social-arrow">↗</span>
+          <strong>Instagram</strong>
+          <small>Découvrir</small>
         </a>
 
         <a
           class="social-card facebook"
           href="https://www.facebook.com/100079557574247/"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener"
         >
-          <span class="social-icon">f</span>
-
-          <span class="social-information">
-            <strong>Facebook</strong>
-            <small>Boutique La Rose</small>
+          <span class="social-logo-wrap">
+            <img
+              class="social-logo"
+              src="images/logo2.png"
+              alt="Logo Facebook"
+              onerror="this.onerror=null;this.src='https://cdn.simpleicons.org/facebook/1877F2';"
+            >
           </span>
 
-          <span class="social-arrow">↗</span>
+          <strong>Facebook</strong>
+          <small>Suivre</small>
         </a>
 
         <a
-          class="social-card telephone"
-          href="tel:+213782596816"
+          class="social-card tiktok"
+          href="https://www.tiktok.com/@boutiquelarose0"
+          target="_blank"
+          rel="noopener"
         >
-          <span class="social-icon">☎</span>
-
-          <span class="social-information">
-            <strong>Téléphone</strong>
-            <small>07 82 59 68 16</small>
+          <span class="social-logo-wrap">
+            <img
+              class="social-logo"
+              src="images/logo3.png"
+              alt="Logo TikTok"
+              onerror="this.onerror=null;this.src='https://cdn.simpleicons.org/tiktok/000000';"
+            >
           </span>
 
-          <span class="social-arrow">↗</span>
+          <strong>TikTok</strong>
+          <small>Regarder</small>
         </a>
+      </div>
+    </section>
 
+    <section class="section">
+      <div class="location-card">
+        <div class="location-top">
+          <span class="location-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                 stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 12-9 12S3 17 3 10
+                       a9 9 0 1 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </span>
+
+          <div class="location-text">
+            <h3>Visitez La Rose</h3>
+            <p>
+              Consultez notre emplacement et démarrez directement
+              votre itinéraire avec Google Maps.
+            </p>
+          </div>
+        </div>
+
+        <a
+          class="map-button"
+          href="https://maps.app.goo.gl/F58z1vffH6Cp3stj7?g_st=ic"
+          target="_blank"
+          rel="noopener"
+        >
+          Ouvrir l’itinéraire
+        </a>
       </div>
     </section>
 
     <footer>
-      <div class="footer-symbol">✦</div>
-      <p>Boutique La Rose</p>
-      <span>MODE · ÉLÉGANCE · FÉMINITÉ</span>
+      Boutique La Rose<br>
+      Mode féminine • Élégance • Qualité
     </footer>
-
   </main>
 
-  <div class="toast" id="toast">
-    Lien copié
-  </div>
+  <div class="toast" id="toast">Lien copié</div>
 
   <script>
-    const gallery =
-      document.getElementById("productGallery");
-
-    const products =
-      Array.from(document.querySelectorAll(".product-card"));
-
-    const dotsContainer =
-      document.getElementById("galleryDots");
-
-    const previousButton =
-      document.getElementById("previousButton");
-
-    const nextButton =
-      document.getElementById("nextButton");
-
-    const shareButton =
-      document.getElementById("shareButton");
-
-    const toast =
-      document.getElementById("toast");
-
-    let currentProduct = 0;
-    let autoplay;
-    let scrollTimer;
-
-    products.forEach((product, index) => {
-      const dot = document.createElement("i");
-
-      if (index === 0) {
-        dot.classList.add("active");
-      }
-
-      dotsContainer.appendChild(dot);
-    });
-
-    const dots =
-      Array.from(dotsContainer.children);
-
-    function showProduct(index, smooth = true) {
-      currentProduct =
-        (index + products.length) % products.length;
-
-      products[currentProduct].scrollIntoView({
-        behavior: smooth ? "smooth" : "auto",
-        block: "nearest",
-        inline: "center"
-      });
-
-      dots.forEach((dot, dotIndex) => {
-        dot.classList.toggle(
-          "active",
-          dotIndex === currentProduct
-        );
-      });
-    }
-
-    function startAutoplay() {
-      clearInterval(autoplay);
-
-      autoplay = setInterval(() => {
-        showProduct(currentProduct + 1);
-      }, 4500);
-    }
-
-    nextButton.addEventListener("click", () => {
-      showProduct(currentProduct + 1);
-      startAutoplay();
-    });
-
-    previousButton.addEventListener("click", () => {
-      showProduct(currentProduct - 1);
-      startAutoplay();
-    });
-
-    gallery.addEventListener("scroll", () => {
-      clearTimeout(scrollTimer);
-
-      scrollTimer = setTimeout(() => {
-        const galleryCenter =
-          gallery.scrollLeft + gallery.clientWidth / 2;
-
-        let nearestIndex = 0;
-        let nearestDistance = Infinity;
-
-        products.forEach((product, index) => {
-          const productCenter =
-            product.offsetLeft + product.offsetWidth / 2;
-
-          const distance =
-            Math.abs(galleryCenter - productCenter);
-
-          if (distance < nearestDistance) {
-            nearestDistance = distance;
-            nearestIndex = index;
-          }
-        });
-
-        currentProduct = nearestIndex;
-
-        dots.forEach((dot, index) => {
-          dot.classList.toggle(
-            "active",
-            index === currentProduct
-          );
-        });
-      }, 80);
-    });
-
-    shareButton.addEventListener("click", async () => {
-      const shareInformation = {
+    async function sharePage() {
+      const shareData = {
         title: "Boutique La Rose",
-        text: "Découvrez Boutique La Rose à Chéraga.",
+        text: "Découvrez Boutique La Rose",
         url: window.location.href
       };
 
       try {
         if (navigator.share) {
-          await navigator.share(shareInformation);
+          await navigator.share(shareData);
         } else {
-          await navigator.clipboard.writeText(
-            window.location.href
-          );
-
-          toast.classList.add("show");
-
-          setTimeout(() => {
-            toast.classList.remove("show");
-          }, 1800);
+          await navigator.clipboard.writeText(window.location.href);
+          showToast("Lien copié");
         }
       } catch (error) {
         if (error.name !== "AbortError") {
-          console.error("Partage impossible", error);
+          copyLinkFallback();
         }
       }
-    });
+    }
 
-    startAutoplay();
+    function copyLinkFallback() {
+      const textArea = document.createElement("textarea");
+      textArea.value = window.location.href;
+      textArea.style.position = "fixed";
+      textArea.style.opacity = "0";
+
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+
+      showToast("Lien copié");
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2200);
+    }
   </script>
 </body>
 </html>
