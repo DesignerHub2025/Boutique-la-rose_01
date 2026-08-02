@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -8,25 +8,20 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <meta name="theme-color" content="#060504">
+  <title>Boutique La Rose | Chéraga</title>
 
   <meta
     name="description"
-    content="Boutique La Rose — mode féminine et élégance à Chéraga, Alger."
+    content="Boutique La Rose — Mode féminine et élégance à Chéraga, Alger."
   >
 
-  <meta property="og:title" content="Boutique La Rose">
+  <meta name="theme-color" content="#080604">
 
-  <meta
-    property="og:description"
-    content="Découvrez nos nouveautés et retrouvez tous nos liens officiels."
+  <link
+    rel="icon"
+    type="image/png"
+    href="images/logo.PNG"
   >
-
-  <meta property="og:image" content="images/logo.PNG">
-
-  <title>Boutique La Rose | Chéraga</title>
-
-  <link rel="icon" type="image/png" href="images/logo.PNG">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -39,50 +34,60 @@
 
   <style>
     :root {
-      --ink: #050403;
-      --panel: #0e0b09;
-      --panel-2: #15100d;
+      --black: #050403;
+      --panel: #100c09;
+      --panel-light: #19110c;
       --gold: #d9a94b;
-      --champagne: #f3d58e;
-      --rose: #b76767;
-      --cream: #fff7e6;
-      --muted: #aa9b87;
-      --line: rgba(226, 183, 91, 0.22);
-      --radius: 30px;
+      --gold-light: #f4d68d;
+      --cream: #fff8e8;
+      --muted: #aa9b86;
+      --rose: #b96767;
+      --line: rgba(226, 182, 90, 0.23);
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
+      background: var(--black);
       scroll-behavior: smooth;
-      background: var(--ink);
     }
 
     body {
       min-height: 100vh;
-      margin: 0;
       overflow-x: hidden;
       color: var(--cream);
-      font-family: "Manrope", sans-serif;
       background:
         radial-gradient(
           circle at 50% -5%,
           rgba(217, 169, 75, 0.18),
-          transparent 28rem
+          transparent 430px
         ),
         radial-gradient(
-          circle at 8% 38%,
-          rgba(128, 45, 45, 0.12),
-          transparent 26rem
+          circle at 5% 45%,
+          rgba(145, 60, 60, 0.13),
+          transparent 390px
         ),
         linear-gradient(
           155deg,
-          #070503 0%,
+          #090604 0%,
           #020202 55%,
-          #0d0805 100%
+          #100905 100%
         );
+      font-family: "Manrope", sans-serif;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.28;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.07'/%3E%3C/svg%3E");
     }
 
     a {
@@ -96,149 +101,132 @@
     }
 
     svg {
-      width: 24px;
+      width: 23px;
       fill: none;
       stroke: currentColor;
-      stroke-width: 1.7;
+      stroke-width: 1.8;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
-    .page-noise {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      opacity: 0.34;
-      pointer-events: none;
-      background-image:
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.06'/%3E%3C/svg%3E");
-    }
-
-    .orb {
+    .background-circle {
       position: fixed;
       z-index: -1;
       width: 420px;
       height: 420px;
-      border: 1px solid rgba(217, 169, 75, 0.1);
+      border: 1px solid rgba(217, 169, 75, 0.10);
       border-radius: 50%;
       pointer-events: none;
     }
 
-    .orb::after {
+    .background-circle::after {
       content: "";
       position: absolute;
       inset: 42px;
-      border: inherit;
-      border-radius: inherit;
+      border: 1px solid rgba(217, 169, 75, 0.07);
+      border-radius: 50%;
     }
 
-    .orb--one {
-      top: -240px;
+    .circle-one {
+      top: -250px;
       right: -220px;
     }
 
-    .orb--two {
+    .circle-two {
       bottom: -260px;
       left: -220px;
     }
 
-    .profile {
+    .page {
       position: relative;
       width: min(100%, 620px);
-      margin: 0 auto;
-      padding: 42px 18px 46px;
+      margin: auto;
+      padding: 40px 16px 50px;
     }
 
     .share-button {
       position: absolute;
-      top: 24px;
-      right: 20px;
-      z-index: 5;
+      top: 22px;
+      right: 19px;
+      z-index: 10;
       width: 44px;
       height: 44px;
       display: grid;
       place-items: center;
-      cursor: pointer;
       border: 1px solid var(--line);
       border-radius: 50%;
-      color: var(--cream);
-      background: rgba(16, 12, 9, 0.72);
+      background: rgba(17, 12, 9, 0.78);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
+      cursor: pointer;
       transition: 0.25s ease;
     }
 
     .share-button:hover {
       transform: translateY(-2px);
       border-color: var(--gold);
-      background: rgba(217, 169, 75, 0.12);
+      background: rgba(217, 169, 75, 0.13);
     }
 
-    .share-button svg {
-      width: 19px;
-    }
-
-    .brand {
-      padding: 8px 36px 34px;
+    .brand-header {
+      padding: 10px 30px 35px;
       text-align: center;
+      animation: reveal 0.7s ease both;
     }
 
     .logo-halo {
       position: relative;
-      width: 138px;
-      height: 138px;
-      margin: 0 auto 24px;
+      width: 144px;
+      height: 144px;
+      margin: 0 auto 25px;
       display: grid;
       place-items: center;
     }
 
-    .logo-halo::before,
+    .logo-halo::before {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border: 1px solid rgba(244, 214, 141, 0.34);
+      border-radius: 50%;
+      background: conic-gradient(
+        from 180deg,
+        transparent,
+        rgba(217, 169, 75, 0.44),
+        transparent 38%,
+        rgba(185, 103, 103, 0.27),
+        transparent 76%
+      );
+      animation: rotateCircle 12s linear infinite;
+    }
+
     .logo-halo::after {
       content: "";
       position: absolute;
-      border-radius: 50%;
-    }
-
-    .logo-halo::before {
-      inset: -6px;
-      border: 1px solid rgba(243, 213, 142, 0.32);
-      background:
-        conic-gradient(
-          from 180deg,
-          transparent,
-          rgba(217,169,75,.35),
-          transparent 38%,
-          rgba(183,103,103,.24),
-          transparent 76%
-        );
-      animation: spin 12s linear infinite;
-    }
-
-    .logo-halo::after {
       inset: -18px;
-      border: 1px solid rgba(217,169,75,.1);
-      box-shadow: 0 0 50px rgba(217,169,75,.18);
-    }
-
-    .logo-wrap {
-      position: relative;
-      z-index: 1;
-      width: 120px;
-      height: 120px;
-      padding: 4px;
-      border: 1px solid rgba(243, 213, 142, 0.75);
+      border: 1px solid rgba(217, 169, 75, 0.10);
       border-radius: 50%;
-      background:
-        linear-gradient(
-          145deg,
-          #f3d58e,
-          #80591f,
-          #d9a94b
-        );
-      box-shadow: 0 18px 55px rgba(0,0,0,.6);
+      box-shadow: 0 0 55px rgba(217, 169, 75, 0.20);
     }
 
-    .logo-wrap img {
+    .logo-frame {
+      position: relative;
+      z-index: 2;
+      width: 124px;
+      height: 124px;
+      padding: 4px;
+      border: 1px solid rgba(244, 214, 141, 0.80);
+      border-radius: 50%;
+      background: linear-gradient(
+        145deg,
+        #f4d68d,
+        #79511a,
+        #d9a94b
+      );
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.65);
+    }
+
+    .logo-frame img {
       width: 100%;
       height: 100%;
       display: block;
@@ -247,12 +235,12 @@
       background: #000;
     }
 
-    .kicker {
-      margin: 0 0 9px;
-      color: var(--champagne);
+    .small-title {
+      margin-bottom: 9px;
+      color: var(--gold-light);
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: .32em;
+      letter-spacing: 0.30em;
       text-transform: uppercase;
     }
 
@@ -262,105 +250,105 @@
     }
 
     h1 {
-      margin: 0;
       color: transparent;
+      background: linear-gradient(
+        180deg,
+        #fff8e2 10%,
+        #d39c39 88%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
       font-size: clamp(48px, 15vw, 72px);
       font-weight: 600;
-      line-height: .9;
-      letter-spacing: .08em;
-      text-indent: .08em;
-      background:
-        linear-gradient(
-          180deg,
-          #fff7df 10%,
-          #d39d3a 85%
-        );
-      -webkit-background-clip: text;
-      background-clip: text;
+      line-height: 0.9;
+      letter-spacing: 0.08em;
+      text-indent: 0.08em;
     }
 
-    .signature {
-      margin: 14px 0 18px;
-      color: #b7a890;
+    .slogan {
+      margin: 15px 0 18px;
+      color: #b9a98e;
       font-family: "Cormorant Garamond", serif;
       font-size: 19px;
       font-style: italic;
     }
 
-    .location-chip {
+    .location-label {
       width: fit-content;
-      margin: 0 auto;
+      margin: auto;
       padding: 9px 14px;
       display: flex;
       align-items: center;
       gap: 8px;
-      color: #c4b79e;
-      font-size: 11px;
-      letter-spacing: .06em;
       border: 1px solid var(--line);
-      border-radius: 99px;
-      background: rgba(217,169,75,.05);
+      border-radius: 50px;
+      color: #c5b79e;
+      background: rgba(217, 169, 75, 0.06);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      transition: 0.25s;
     }
 
-    .location-chip svg {
+    .location-label:hover {
+      color: var(--cream);
+      border-color: var(--gold);
+    }
+
+    .location-label svg {
       width: 15px;
       color: var(--gold);
     }
 
-    .showcase,
-    .social-section {
+    .luxury-section {
       position: relative;
       padding: 20px;
       overflow: hidden;
       border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background:
-        linear-gradient(
-          145deg,
-          rgba(25,18,13,.88),
-          rgba(7,6,5,.94)
-        );
+      border-radius: 30px;
+      background: linear-gradient(
+        145deg,
+        rgba(26, 18, 13, 0.92),
+        rgba(7, 6, 5, 0.96)
+      );
       box-shadow:
-        0 24px 65px rgba(0,0,0,.4),
-        inset 0 1px rgba(255,255,255,.035);
+        0 25px 70px rgba(0, 0, 0, 0.45),
+        inset 0 1px rgba(255, 255, 255, 0.04);
     }
 
-    .showcase::before,
-    .social-section::before {
+    .luxury-section::before {
       content: "";
       position: absolute;
       top: 0;
       left: 18%;
       right: 18%;
       height: 1px;
-      background:
-        linear-gradient(
-          90deg,
-          transparent,
-          var(--champagne),
-          transparent
-        );
-      box-shadow: 0 0 14px var(--gold);
+      background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold-light),
+        transparent
+      );
+      box-shadow: 0 0 15px var(--gold);
     }
 
     .section-heading {
-      margin-bottom: 16px;
+      margin-bottom: 17px;
       display: flex;
       align-items: end;
       justify-content: space-between;
-      gap: 14px;
+      gap: 15px;
     }
 
     .section-heading span {
       color: var(--gold);
       font-size: 9px;
       font-weight: 700;
-      letter-spacing: .24em;
+      letter-spacing: 0.23em;
     }
 
     .section-heading h2 {
-      margin: 3px 0 0;
-      font-size: 30px;
+      margin-top: 3px;
+      font-size: 31px;
       font-weight: 500;
       line-height: 1;
     }
@@ -373,150 +361,87 @@
     .gallery-controls button {
       width: 36px;
       height: 36px;
-      cursor: pointer;
       border: 1px solid var(--line);
       border-radius: 50%;
-      background: rgba(255,255,255,.025);
-      transition: .2s ease;
+      background: rgba(255, 255, 255, 0.025);
+      cursor: pointer;
+      transition: 0.2s;
     }
 
     .gallery-controls button:hover {
       border-color: var(--gold);
-      background: rgba(217,169,75,.12);
+      background: rgba(217, 169, 75, 0.13);
     }
 
-    .product-track {
+    .product-gallery {
       display: grid;
       grid-auto-flow: column;
-      grid-auto-columns: 76%;
+      grid-auto-columns: 77%;
       gap: 12px;
       overflow-x: auto;
+      scroll-snap-type: x mandatory;
       overscroll-behavior-inline: contain;
-      scroll-snap-type: inline mandatory;
       scrollbar-width: none;
     }
 
-    .product-track::-webkit-scrollbar {
+    .product-gallery::-webkit-scrollbar {
       display: none;
     }
 
     .product-card {
       position: relative;
-      min-height: 335px;
+      min-height: 350px;
       overflow: hidden;
       scroll-snap-align: center;
-      border: 1px solid rgba(243,213,142,.18);
+      border: 1px solid rgba(244, 214, 141, 0.19);
       border-radius: 23px;
-      background: #15100d;
+      background: #17100c;
     }
 
     .product-card img {
       position: absolute;
       inset: 0;
-      z-index: 1;
+      z-index: 2;
       width: 100%;
       height: 100%;
       display: block;
       object-fit: cover;
+      transition: transform 0.7s ease;
     }
 
-    .product-placeholder {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-content: center;
-      gap: 8px;
-      text-align: center;
+    .product-card:hover img {
+      transform: scale(1.05);
     }
 
-    .product-placeholder::before {
-      content: "";
-      position: absolute;
-      inset: 14px;
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: 17px;
-    }
-
-    .product-placeholder span {
-      color: rgba(243,213,142,.2);
-      font-family: "Cormorant Garamond", serif;
-      font-size: 94px;
-      line-height: .8;
-    }
-
-    .product-placeholder strong {
-      color: rgba(255,247,230,.5);
-      font-size: 10px;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-    }
-
-    .product-card--1 {
-      background:
-        radial-gradient(
-          circle at 20% 20%,
-          #5b352f,
-          #150d0c 72%
-        );
-    }
-
-    .product-card--2 {
-      background:
-        radial-gradient(
-          circle at 80% 15%,
-          #6a5039,
-          #17100b 72%
-        );
-    }
-
-    .product-card--3 {
-      background:
-        radial-gradient(
-          circle at 35% 30%,
-          #38483e,
-          #0e1411 74%
-        );
-    }
-
-    .product-card--4 {
-      background:
-        radial-gradient(
-          circle at 75% 20%,
-          #4b3444,
-          #130d12 72%
-        );
-    }
-
-    .product-shade {
+    .product-information {
       position: absolute;
       inset: auto 0 0;
-      z-index: 2;
-      padding: 60px 17px 17px;
+      z-index: 3;
+      padding: 75px 17px 18px;
       display: grid;
       gap: 4px;
-      background:
-        linear-gradient(
-          transparent,
-          rgba(0,0,0,.9)
-        );
+      background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.92)
+      );
     }
 
-    .product-shade span {
-      color: var(--champagne);
+    .product-information small {
+      color: var(--gold-light);
       font-size: 9px;
-      letter-spacing: .16em;
+      letter-spacing: 0.17em;
       text-transform: uppercase;
     }
 
-    .product-shade strong {
+    .product-information strong {
       font-family: "Cormorant Garamond", serif;
-      font-size: 22px;
+      font-size: 23px;
       font-weight: 600;
     }
 
     .gallery-dots {
       min-height: 7px;
-      margin-top: 16px;
+      margin-top: 17px;
       display: flex;
       justify-content: center;
       gap: 7px;
@@ -525,98 +450,92 @@
     .gallery-dots i {
       width: 6px;
       height: 6px;
-      border-radius: 99px;
+      border-radius: 30px;
       background: #5f574e;
-      transition: .25s ease;
+      transition: 0.25s;
     }
 
     .gallery-dots i.active {
-      width: 22px;
-      background:
-        linear-gradient(
-          90deg,
-          var(--gold),
-          var(--rose)
-        );
+      width: 23px;
+      background: linear-gradient(
+        90deg,
+        var(--gold),
+        var(--rose)
+      );
     }
 
-    .primary-actions {
+    .main-actions {
       margin: 16px 0;
       display: grid;
-      gap: 10px;
+      gap: 11px;
+      animation: reveal 0.7s 0.18s ease both;
     }
 
-    .action {
-      min-height: 76px;
+    .action-button {
+      min-height: 78px;
       padding: 13px 16px;
       display: grid;
-      grid-template-columns: 46px 1fr 26px;
+      grid-template-columns: 48px 1fr 25px;
       align-items: center;
       gap: 13px;
       border: 1px solid var(--line);
       border-radius: 22px;
-      background:
-        linear-gradient(
-          120deg,
-          rgba(255,255,255,.045),
-          rgba(217,169,75,.025)
-        );
-      transition: .24s ease;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.045),
+        rgba(217, 169, 75, 0.025)
+      );
+      transition: 0.25s;
     }
 
-    .action--gold {
-      border-color: rgba(243,213,142,.44);
-      background:
-        linear-gradient(
-          125deg,
-          rgba(115,75,21,.36),
-          rgba(20,13,8,.88)
-        );
+    .action-button.primary {
+      border-color: rgba(244, 214, 141, 0.45);
+      background: linear-gradient(
+        125deg,
+        rgba(118, 76, 21, 0.38),
+        rgba(20, 13, 8, 0.90)
+      );
     }
 
-    .action:hover {
-      transform: translateY(-2px);
+    .action-button:hover {
+      transform: translateY(-3px);
       border-color: var(--gold);
-      box-shadow: 0 14px 35px rgba(0,0,0,.32);
+      box-shadow: 0 15px 38px rgba(0, 0, 0, 0.35);
     }
 
     .action-icon {
-      width: 46px;
-      height: 46px;
+      width: 48px;
+      height: 48px;
       display: grid;
       place-items: center;
-      color: var(--champagne);
-      border: 1px solid rgba(217,169,75,.28);
+      border: 1px solid rgba(217, 169, 75, 0.28);
       border-radius: 15px;
-      background: rgba(217,169,75,.08);
+      color: var(--gold-light);
+      background: rgba(217, 169, 75, 0.08);
     }
 
-    .action-icon svg {
-      width: 21px;
-    }
-
-    .action > span:nth-child(2) {
+    .action-content {
       display: grid;
-      gap: 2px;
+      gap: 3px;
     }
 
-    .action small {
+    .action-content small {
       color: var(--muted);
       font-size: 10px;
     }
 
-    .action strong {
+    .action-content strong {
       font-size: 14px;
     }
 
-    .action b,
-    .social b {
+    .action-arrow {
       color: var(--gold);
-      font-weight: 400;
+      font-size: 18px;
     }
 
-    .section-heading--social {
-      margin-bottom: 17px;
+    .social-section {
+      margin-top: 16px;
+      animation: reveal 0.7s 0.26s ease both;
     }
 
     .social-grid {
@@ -625,56 +544,58 @@
       gap: 10px;
     }
 
-    .social {
+    .social-card {
       position: relative;
-      min-height: 122px;
+      min-height: 125px;
       padding: 15px;
       display: grid;
       align-content: space-between;
-      border: 1px solid rgba(255,255,255,.07);
+      border: 1px solid rgba(255, 255, 255, 0.07);
       border-radius: 20px;
-      background: rgba(255,255,255,.025);
-      transition: .24s ease;
+      background: rgba(255, 255, 255, 0.025);
+      transition: 0.25s;
     }
 
-    .social:hover {
-      transform: translateY(-3px);
-      border-color: rgba(243,213,142,.36);
-      background: rgba(255,255,255,.045);
+    .social-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(244, 214, 141, 0.40);
+      background: rgba(255, 255, 255, 0.05);
     }
 
     .social-icon {
-      width: 39px;
-      height: 39px;
+      width: 42px;
+      height: 42px;
       display: grid;
       place-items: center;
       overflow: hidden;
       border-radius: 13px;
-      background: rgba(255,255,255,.05);
+      background: rgba(255, 255, 255, 0.055);
+      font-size: 21px;
+      font-weight: 700;
     }
 
-    .social-icon svg {
-      width: 21px;
-    }
-
-    .real-social-logo {
+    .social-icon img {
       width: 100%;
       height: 100%;
       display: block;
-      object-fit: contain;
-      border-radius: 10px;
+      object-fit: cover;
+      border-radius: 13px;
     }
 
-    .social > span:nth-child(2) {
+    .telephone .social-icon {
+      color: var(--gold-light);
+    }
+
+    .social-information {
       display: grid;
-      gap: 2px;
+      gap: 3px;
     }
 
-    .social strong {
+    .social-information strong {
       font-size: 13px;
     }
 
-    .social small {
+    .social-information small {
       overflow: hidden;
       color: var(--muted);
       font-size: 9px;
@@ -682,86 +603,68 @@
       white-space: nowrap;
     }
 
-    .social b {
+    .social-arrow {
       position: absolute;
       top: 16px;
       right: 15px;
-    }
-
-    .social--phone .social-icon {
-      color: var(--champagne);
+      color: var(--gold);
     }
 
     footer {
-      padding: 34px 0 4px;
-      color: #887b69;
+      padding: 36px 0 5px;
       text-align: center;
+      color: #887b69;
+      animation: reveal 0.7s 0.32s ease both;
     }
 
-    .footer-mark {
+    .footer-symbol {
       margin-bottom: 8px;
       color: var(--gold);
     }
 
     footer p {
-      margin: 0 0 6px;
-      color: var(--champagne);
+      margin-bottom: 6px;
+      color: var(--gold-light);
       font-family: "Cormorant Garamond", serif;
-      font-size: 18px;
+      font-size: 19px;
     }
 
     footer span {
       font-size: 7px;
-      letter-spacing: .34em;
+      letter-spacing: 0.34em;
     }
 
     .toast {
       position: fixed;
       left: 50%;
       bottom: 24px;
-      z-index: 20;
-      padding: 11px 17px;
-      opacity: 0;
-      color: var(--champagne);
-      font-size: 11px;
-      pointer-events: none;
+      z-index: 50;
+      padding: 11px 18px;
       border: 1px solid var(--line);
-      border-radius: 99px;
-      background: rgba(13,10,8,.92);
-      box-shadow: 0 12px 40px rgba(0,0,0,.4);
+      border-radius: 50px;
+      color: var(--gold-light);
+      background: rgba(14, 10, 8, 0.95);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+      font-size: 11px;
+      opacity: 0;
+      pointer-events: none;
       transform: translate(-50%, 20px);
-      transition: .25s ease;
+      transition: 0.25s;
     }
 
-    .toast.visible {
+    .toast.show {
       opacity: 1;
       transform: translate(-50%, 0);
     }
 
-    .reveal {
-      animation: reveal .7s ease both;
-    }
-
-    .showcase {
-      animation-delay: .1s;
-    }
-
-    .primary-actions {
-      animation-delay: .18s;
-    }
-
-    .social-section {
-      animation-delay: .26s;
-    }
-
-    footer {
-      animation-delay: .32s;
+    .products-section {
+      animation: reveal 0.7s 0.10s ease both;
     }
 
     @keyframes reveal {
       from {
         opacity: 0;
-        transform: translateY(14px);
+        transform: translateY(15px);
       }
 
       to {
@@ -770,55 +673,54 @@
       }
     }
 
-    @keyframes spin {
+    @keyframes rotateCircle {
       to {
         transform: rotate(360deg);
       }
     }
 
     @media (min-width: 720px) {
-      .profile {
-        padding-top: 58px;
+      .page {
+        padding-top: 60px;
       }
 
-      .product-track {
+      .product-gallery {
         grid-auto-columns: calc((100% - 24px) / 3);
       }
 
       .product-card {
-        min-height: 300px;
+        min-height: 310px;
       }
     }
 
     @media (max-width: 390px) {
-      .profile {
+      .page {
         padding-inline: 11px;
       }
 
-      .brand {
-        padding-inline: 26px;
+      .brand-header {
+        padding-inline: 22px;
       }
 
-      .showcase,
-      .social-section {
+      .luxury-section {
         padding: 16px;
         border-radius: 25px;
       }
 
-      .product-track {
-        grid-auto-columns: 82%;
+      .product-gallery {
+        grid-auto-columns: 83%;
       }
 
       .product-card {
-        min-height: 310px;
+        min-height: 325px;
       }
 
       .social-grid {
         gap: 8px;
       }
 
-      .social {
-        min-height: 116px;
+      .social-card {
+        min-height: 118px;
         padding: 13px;
       }
     }
@@ -828,7 +730,7 @@
       *::before,
       *::after {
         scroll-behavior: auto !important;
-        animation-duration: .01ms !important;
+        animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
       }
     }
@@ -836,52 +738,53 @@
 </head>
 
 <body>
-  <div class="page-noise" aria-hidden="true"></div>
-  <div class="orb orb--one" aria-hidden="true"></div>
-  <div class="orb orb--two" aria-hidden="true"></div>
+  <div class="background-circle circle-one"></div>
+  <div class="background-circle circle-two"></div>
 
-  <main class="profile">
+  <main class="page">
+
     <button
       class="share-button"
       id="shareButton"
-      aria-label="Partager la page"
+      aria-label="Partager le site"
     >
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <circle cx="18" cy="5" r="2.5"></circle>
         <circle cx="6" cy="12" r="2.5"></circle>
         <circle cx="18" cy="19" r="2.5"></circle>
-        <path d="m8.2 10.8 7.6-4.5M8.2 13.2l7.6 4.5"></path>
+        <path d="m8.2 10.8 7.6-4.5"></path>
+        <path d="m8.2 13.2 7.6 4.5"></path>
       </svg>
     </button>
 
-    <header class="brand reveal">
+    <header class="brand-header">
       <div class="logo-halo">
-        <div class="logo-wrap">
+        <div class="logo-frame">
           <img
             src="images/logo.PNG"
-            alt="Logo officiel de Boutique La Rose"
+            alt="Logo Boutique La Rose"
           >
         </div>
       </div>
 
-      <p class="kicker">Boutique de mode féminine</p>
+      <p class="small-title">
+        Boutique de mode féminine
+      </p>
 
       <h1>LA ROSE</h1>
 
-      <p class="signature">
-        L'élégance qui vous ressemble
+      <p class="slogan">
+        L’élégance qui vous ressemble
       </p>
 
       <a
-        class="location-chip"
+        class="location-label"
         href="https://maps.app.goo.gl/F58z1vffH6Cp3stj7?g_st=ic"
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
       >
         <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"
-          ></path>
+          <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
           <circle cx="12" cy="10" r="2.5"></circle>
         </svg>
 
@@ -890,173 +793,130 @@
     </header>
 
     <section
-      class="showcase reveal"
-      aria-labelledby="showcaseTitle"
+      class="luxury-section products-section"
+      aria-labelledby="productsTitle"
     >
       <div class="section-heading">
         <div>
           <span>NOUVELLE SÉLECTION</span>
-          <h2 id="showcaseTitle">Nos coups de cœur</h2>
+          <h2 id="productsTitle">Nos coups de cœur</h2>
         </div>
 
-        <div
-          class="gallery-controls"
-          aria-label="Contrôles du catalogue"
-        >
-          <button
-            id="previousProduct"
-            aria-label="Produit précédent"
-          >
+        <div class="gallery-controls">
+          <button id="previousButton" aria-label="Produit précédent">
             ←
           </button>
 
-          <button
-            id="nextProduct"
-            aria-label="Produit suivant"
-          >
+          <button id="nextButton" aria-label="Produit suivant">
             →
           </button>
         </div>
       </div>
 
-      <div
-        class="product-track"
-        id="productTrack"
-        tabindex="0"
-      >
-        <article class="product-card product-card--1">
+      <div class="product-gallery" id="productGallery">
+
+        <article class="product-card">
           <img
             src="images/product1.jpg"
-            alt="Produit La Rose 01"
-            onerror="this.hidden=true"
+            alt="Produit Boutique La Rose 1"
           >
 
-          <div class="product-placeholder">
-            <span>01</span>
-            <strong>Votre photo</strong>
-          </div>
-
-          <div class="product-shade">
-            <span>Nouveauté</span>
+          <div class="product-information">
+            <small>Nouveauté</small>
             <strong>Élégance naturelle</strong>
           </div>
         </article>
 
-        <article class="product-card product-card--2">
+        <article class="product-card">
           <img
             src="images/product2.jpg"
-            alt="Produit La Rose 02"
-            onerror="this.hidden=true"
+            alt="Produit Boutique La Rose 2"
           >
 
-          <div class="product-placeholder">
-            <span>02</span>
-            <strong>Votre photo</strong>
-          </div>
-
-          <div class="product-shade">
-            <span>Collection</span>
+          <div class="product-information">
+            <small>Collection</small>
             <strong>Allure raffinée</strong>
           </div>
         </article>
 
-        <article class="product-card product-card--3">
+        <article class="product-card">
           <img
             src="images/product3.jpg"
-            alt="Produit La Rose 03"
-            onerror="this.hidden=true"
+            alt="Produit Boutique La Rose 3"
           >
 
-          <div class="product-placeholder">
-            <span>03</span>
-            <strong>Votre photo</strong>
-          </div>
-
-          <div class="product-shade">
-            <span>La Rose</span>
+          <div class="product-information">
+            <small>La Rose</small>
             <strong>Style intemporel</strong>
           </div>
         </article>
 
-        <article class="product-card product-card--4">
+        <article class="product-card">
           <img
             src="images/product4.jpg"
-            alt="Produit La Rose 04"
-            onerror="this.hidden=true"
+            alt="Produit Boutique La Rose 4"
           >
 
-          <div class="product-placeholder">
-            <span>04</span>
-            <strong>Votre photo</strong>
-          </div>
-
-          <div class="product-shade">
-            <span>Tendance</span>
-            <strong>Détails précieux</strong>
+          <div class="product-information">
+            <small>Tendance</small>
+            <strong>Féminité moderne</strong>
           </div>
         </article>
+
       </div>
 
-      <div
-        class="gallery-dots"
-        id="galleryDots"
-        aria-hidden="true"
-      ></div>
+      <div class="gallery-dots" id="galleryDots"></div>
     </section>
 
     <section
-      class="primary-actions reveal"
-      aria-label="Actions principales"
+      class="main-actions"
+      aria-label="Contact et localisation"
     >
       <a
-        class="action action--gold"
+        class="action-button primary"
         href="tel:+213782596816"
       >
         <span class="action-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M7.2 3.6 10 8 8.1 9.9a14.7 14.7 0 0 0 6 6L16 14l4.4 2.8-.9 3.1c-.2.7-.9 1.1-1.6 1.1C9.7 20.5 3.5 14.3 3 6.1c0-.7.4-1.4 1.1-1.6l3.1-.9Z"
-            ></path>
+            <path d="M7.2 3.6 10 8 8.1 9.9a14.7 14.7 0 0 0 6 6L16 14l4.4 2.8-.9 3.1c-.2.7-.9 1.1-1.6 1.1C9.7 20.5 3.5 14.3 3 6.1c0-.7.4-1.4 1.1-1.6l3.1-.9Z"></path>
           </svg>
         </span>
 
-        <span>
+        <span class="action-content">
           <small>Contact direct</small>
           <strong>Appeler la boutique</strong>
         </span>
 
-        <b>↗</b>
+        <span class="action-arrow">↗</span>
       </a>
 
       <a
-        class="action"
+        class="action-button"
         href="https://maps.app.goo.gl/F58z1vffH6Cp3stj7?g_st=ic"
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
       >
         <span class="action-icon">
           <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"
-            ></path>
+            <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
             <circle cx="12" cy="10" r="2.5"></circle>
           </svg>
         </span>
 
-        <span>
+        <span class="action-content">
           <small>Chéraga, Alger</small>
-          <strong>Ouvrir l'itinéraire</strong>
+          <strong>Ouvrir l’itinéraire</strong>
         </span>
 
-        <b>↗</b>
+        <span class="action-arrow">↗</span>
       </a>
     </section>
 
     <section
-      class="social-section reveal"
+      class="luxury-section social-section"
       aria-labelledby="socialTitle"
     >
-      <div class="section-heading section-heading--social">
+      <div class="section-heading">
         <div>
           <span>RESTEZ CONNECTÉE</span>
           <h2 id="socialTitle">Suivez La Rose</h2>
@@ -1064,139 +924,126 @@
       </div>
 
       <div class="social-grid">
+
         <a
-          class="social social--instagram"
+          class="social-card instagram"
           href="https://www.instagram.com/boutique_la_rose_1"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           <span class="social-icon">
             <img
-              class="real-social-logo"
               src="images/logo1.png"
               alt="Instagram"
-              onerror="this.onerror=null;this.src='https://cdn.simpleicons.org/instagram/E4405F';"
             >
           </span>
 
-          <span>
+          <span class="social-information">
             <strong>Instagram</strong>
             <small>@boutique_la_rose_1</small>
           </span>
 
-          <b>↗</b>
+          <span class="social-arrow">↗</span>
         </a>
 
         <a
-          class="social social--tiktok"
+          class="social-card tiktok"
           href="https://www.tiktok.com/@boutiquelarose0"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           <span class="social-icon">
             <img
-              class="real-social-logo"
               src="images/logo3.png"
               alt="TikTok"
-              onerror="this.onerror=null;this.src='https://cdn.simpleicons.org/tiktok/FFFFFF';"
             >
           </span>
 
-          <span>
+          <span class="social-information">
             <strong>TikTok</strong>
             <small>@boutiquelarose0</small>
           </span>
 
-          <b>↗</b>
+          <span class="social-arrow">↗</span>
         </a>
 
         <a
-          class="social social--facebook"
+          class="social-card facebook"
           href="https://www.facebook.com/100079557574247/"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
           <span class="social-icon">
             <img
-              class="real-social-logo"
               src="images/logo2.png"
               alt="Facebook"
-              onerror="this.onerror=null;this.src='https://cdn.simpleicons.org/facebook/1877F2';"
             >
           </span>
 
-          <span>
+          <span class="social-information">
             <strong>Facebook</strong>
             <small>Boutique La Rose</small>
           </span>
 
-          <b>↗</b>
+          <span class="social-arrow">↗</span>
         </a>
 
         <a
-          class="social social--phone"
+          class="social-card telephone"
           href="tel:+213782596816"
         >
-          <span class="social-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M7.2 3.6 10 8 8.1 9.9a14.7 14.7 0 0 0 6 6L16 14l4.4 2.8-.9 3.1c-.2.7-.9 1.1-1.6 1.1C9.7 20.5 3.5 14.3 3 6.1c0-.7.4-1.4 1.1-1.6l3.1-.9Z"
-              ></path>
-            </svg>
-          </span>
+          <span class="social-icon">☎</span>
 
-          <span>
+          <span class="social-information">
             <strong>Téléphone</strong>
             <small>07 82 59 68 16</small>
           </span>
 
-          <b>↗</b>
+          <span class="social-arrow">↗</span>
         </a>
+
       </div>
     </section>
 
-    <footer class="reveal">
-      <div class="footer-mark">✦</div>
+    <footer>
+      <div class="footer-symbol">✦</div>
       <p>Boutique La Rose</p>
       <span>MODE · ÉLÉGANCE · FÉMINITÉ</span>
     </footer>
+
   </main>
 
-  <div
-    class="toast"
-    id="toast"
-    role="status"
-    aria-live="polite"
-  >
+  <div class="toast" id="toast">
     Lien copié
   </div>
 
   <script>
-    const track =
-      document.querySelector("#productTrack");
+    const gallery =
+      document.getElementById("productGallery");
 
-    const cards =
-      [...document.querySelectorAll(".product-card")];
+    const products =
+      Array.from(document.querySelectorAll(".product-card"));
 
     const dotsContainer =
-      document.querySelector("#galleryDots");
-
-    const nextButton =
-      document.querySelector("#nextProduct");
+      document.getElementById("galleryDots");
 
     const previousButton =
-      document.querySelector("#previousProduct");
+      document.getElementById("previousButton");
+
+    const nextButton =
+      document.getElementById("nextButton");
 
     const shareButton =
-      document.querySelector("#shareButton");
+      document.getElementById("shareButton");
 
     const toast =
-      document.querySelector("#toast");
+      document.getElementById("toast");
 
-    let activeIndex = 0;
+    let currentProduct = 0;
     let autoplay;
+    let scrollTimer;
 
-    cards.forEach((_, index) => {
+    products.forEach((product, index) => {
       const dot = document.createElement("i");
 
       if (index === 0) {
@@ -1206,13 +1053,14 @@
       dotsContainer.appendChild(dot);
     });
 
-    const dots = [...dotsContainer.children];
+    const dots =
+      Array.from(dotsContainer.children);
 
-    function setActive(index, smooth = true) {
-      activeIndex =
-        (index + cards.length) % cards.length;
+    function showProduct(index, smooth = true) {
+      currentProduct =
+        (index + products.length) % products.length;
 
-      cards[activeIndex].scrollIntoView({
+      products[currentProduct].scrollIntoView({
         behavior: smooth ? "smooth" : "auto",
         block: "nearest",
         inline: "center"
@@ -1221,102 +1069,92 @@
       dots.forEach((dot, dotIndex) => {
         dot.classList.toggle(
           "active",
-          dotIndex === activeIndex
+          dotIndex === currentProduct
         );
       });
     }
 
-    function restartAutoplay() {
+    function startAutoplay() {
       clearInterval(autoplay);
 
       autoplay = setInterval(() => {
-        setActive(activeIndex + 1);
+        showProduct(currentProduct + 1);
       }, 4500);
     }
 
     nextButton.addEventListener("click", () => {
-      setActive(activeIndex + 1);
-      restartAutoplay();
+      showProduct(currentProduct + 1);
+      startAutoplay();
     });
 
     previousButton.addEventListener("click", () => {
-      setActive(activeIndex - 1);
-      restartAutoplay();
+      showProduct(currentProduct - 1);
+      startAutoplay();
     });
 
-    track.addEventListener("scroll", () => {
-      window.clearTimeout(track.scrollEndTimer);
+    gallery.addEventListener("scroll", () => {
+      clearTimeout(scrollTimer);
 
-      track.scrollEndTimer =
-        window.setTimeout(() => {
-          const center =
-            track.scrollLeft +
-            track.clientWidth / 2;
+      scrollTimer = setTimeout(() => {
+        const galleryCenter =
+          gallery.scrollLeft + gallery.clientWidth / 2;
 
-          let closest = 0;
-          let closestDistance = Infinity;
+        let nearestIndex = 0;
+        let nearestDistance = Infinity;
 
-          cards.forEach((card, index) => {
-            const cardCenter =
-              card.offsetLeft +
-              card.offsetWidth / 2;
+        products.forEach((product, index) => {
+          const productCenter =
+            product.offsetLeft + product.offsetWidth / 2;
 
-            const distance =
-              Math.abs(center - cardCenter);
+          const distance =
+            Math.abs(galleryCenter - productCenter);
 
-            if (distance < closestDistance) {
-              closest = index;
-              closestDistance = distance;
-            }
-          });
+          if (distance < nearestDistance) {
+            nearestDistance = distance;
+            nearestIndex = index;
+          }
+        });
 
-          activeIndex = closest;
+        currentProduct = nearestIndex;
 
-          dots.forEach((dot, index) => {
-            dot.classList.toggle(
-              "active",
-              index === activeIndex
-            );
-          });
-        }, 80);
+        dots.forEach((dot, index) => {
+          dot.classList.toggle(
+            "active",
+            index === currentProduct
+          );
+        });
+      }, 80);
     });
 
-    shareButton.addEventListener(
-      "click",
-      async () => {
-        const shareData = {
-          title: "Boutique La Rose",
-          text:
-            "Découvrez Boutique La Rose à Chéraga.",
-          url: window.location.href
-        };
+    shareButton.addEventListener("click", async () => {
+      const shareInformation = {
+        title: "Boutique La Rose",
+        text: "Découvrez Boutique La Rose à Chéraga.",
+        url: window.location.href
+      };
 
-        try {
-          if (navigator.share) {
-            await navigator.share(shareData);
-          } else {
-            await navigator.clipboard.writeText(
-              window.location.href
-            );
+      try {
+        if (navigator.share) {
+          await navigator.share(shareInformation);
+        } else {
+          await navigator.clipboard.writeText(
+            window.location.href
+          );
 
-            toast.classList.add("visible");
+          toast.classList.add("show");
 
-            setTimeout(() => {
-              toast.classList.remove("visible");
-            }, 1800);
-          }
-        } catch (error) {
-          if (error.name !== "AbortError") {
-            console.error(
-              "Partage impossible",
-              error
-            );
-          }
+          setTimeout(() => {
+            toast.classList.remove("show");
+          }, 1800);
+        }
+      } catch (error) {
+        if (error.name !== "AbortError") {
+          console.error("Partage impossible", error);
         }
       }
-    );
+    });
 
-    restartAutoplay();
+    startAutoplay();
   </script>
 </body>
 </html>
